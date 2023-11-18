@@ -1,5 +1,6 @@
 import "./App.css";
 import Game from "./components/Game/Game";
+import Timeline from "./components/Timeline/Timeline";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <div />
           <div>
             <Game />
+            <Timeline />
           </div>
           <div />
         </main>

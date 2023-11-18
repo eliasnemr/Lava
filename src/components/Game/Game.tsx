@@ -11,8 +11,8 @@ const fakeTeamB = {
 
 const Game = () => {
   return (
-    <div className="bg-[#1a1a1a] rounded-lg px-4 py-6">
-      <div className="w-full flex flex-start justify-between items-center">
+    <div className="bg-[#1a1a1a] rounded-lg px-4 py-6 divide-y-[0.5px] divide-slate-500">
+      <div className="w-full flex mb-4 flex-start justify-between items-center">
         <div className="bg-red-900 h-max px-2 py-[0.5px] rounded-full">
           <span className="animate-pulse font-bold text-sm">Live</span>
         </div>
@@ -36,7 +36,7 @@ const Game = () => {
         </div>
       </div>
       <div className="flex justify-evenly">
-        <div className="flex gap-4 items-center flex-col">
+        <div className="flex gap-4 items-center flex-col mt-4">
           <img alt="" className="h-28" src={fakeTeamA.imageUrl} />
           <h1 className="text-lg font-bold">{fakeTeamA.name}</h1>
           <p className="font-bold text-xl">{fakeTeamA.score}</p>
@@ -44,7 +44,7 @@ const Game = () => {
         <h3 className="font-bold text-lg font-mono italic flex items-center text-white">
           VS
         </h3>
-        <div className="flex gap-4 items-center flex-col">
+        <div className="flex gap-4 items-center flex-col mt-4">
           <img alt="" className="h-28" src={fakeTeamB.imageUrl} />
           <h1 className="text-lg font-bold">{fakeTeamB.name}</h1>
           <p className="font-bold text-xl">{fakeTeamB.score}</p>
