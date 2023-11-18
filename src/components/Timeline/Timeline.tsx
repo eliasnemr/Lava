@@ -1,28 +1,31 @@
+import { format, subMinutes } from "date-fns";
 const fakeVotes = [
   {
     id: "0x01",
-    time: new Date().toLocaleTimeString(),
+    time: format(subMinutes(new Date(), 10), "hh:mm:ss"),
     name: "Bob",
     vote: "Apollon",
     lava: "0.112435",
   },
   {
     id: "0x02",
-    time: new Date().toLocaleTimeString(),
+    time: format(subMinutes(new Date(), 9), "hh:mm:ss"),
+
     name: "Alice",
     vote: "AEL",
     lava: "0.01212",
   },
   {
     id: "0x03",
-    time: new Date().toLocaleTimeString(),
+    time: format(subMinutes(new Date(), 8), "hh:mm:ss"),
+
     name: "Jim",
     vote: "AEL",
     lava: "0.21212",
   },
   {
     id: "0x04",
-    time: new Date().toLocaleTimeString(),
+    time: format(subMinutes(new Date(), 5), "hh:mm:ss"),
     name: "Vitalik",
     vote: "AEL",
     lava: "1.41212",

@@ -1,21 +1,40 @@
-const fakeTeamA = {
+import { useEffect, useState } from "react";
+import { format } from "date-fns";
+
+export const fakeTeamA = {
   imageUrl: "./assets/ael.svg",
   name: "AEL",
-  score: 2,
+  score: 5,
 };
-const fakeTeamB = {
+export const fakeTeamB = {
   imageUrl: "./assets/apollon.svg",
   name: "Apollon",
   score: 3,
 };
 
 const Game = () => {
+  const [gameTime, setTime] = useState(90 * 60000);
+
+  useEffect(() => {
+    const _timeInterval = setInterval(() => {
+      setTime((prevState) => prevState - 1000);
+    }, 1000);
+
+    return () => {
+      clearInterval(_timeInterval);
+    };
+  }, []);
+
   return (
     <div className="bg-[#1a1a1a] rounded-lg px-4 py-6 divide-y-[0.5px] divide-slate-500">
       <div className="w-full flex mb-4 flex-start justify-between items-center">
-        <div className="bg-red-900 h-max px-2 py-[0.5px] rounded-full">
-          <span className="animate-pulse font-bold text-sm">Live</span>
+        <div className="flex gap-1">
+          <div className="bg-red-900 h-max px-2 py-[0.5px] rounded-full">
+            <span className="animate-pulse font-bold text-sm">Live</span>
+          </div>
+          <div>{format(gameTime, "mm:ss")}</div>
         </div>
+
         <div className="text-sm flex items-center hover:font-bold hover:cursor-pointer">
           Live Stream
           <svg
